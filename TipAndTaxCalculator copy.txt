@@ -7,23 +7,19 @@ Created on Tue Jul 24 09:46:45 2018
 """
 import datetime
 
-now = datetime.datetime.now().strftime('%m-%d-%Y')
-t = datetime.datetime.now().strftime("%H:%M")
-print (t)
-bill = float(input("What is the cost of your bill?"))
+now = datetime.datetime.now().strftime('%m-%d-%Y') #this line calculates the current month, day, and year
+t = datetime.datetime.now().strftime("%H:%M")#this line calculates the current time
+bill = float(input("What is the cost of your bill?"))#these two lines ask for the cost of the user's bill and what state the user is in
 state = input("Which state are you in?")
-state = state.upper()
-print (state)
+state = state.upper()#since the file that contains the states and their taxes is in caps, this line makes the user's state input capitalized
 
-restaurant = input("Which restaurant are you dining in?")
+
+restaurant = input("Which restaurant are you dining in?")#these lines ask for the user's input on which restaurant they are in, and how the service is 
 restaurant = restaurant.upper()
 service = input("Was your service poor, okay, or great?")
 service = service.upper()
-sigline = "X_________________"
-tcost = bill
-
-
-
+sigline = "X_________________"#defines the variable sigline(signature line), which will later be used in the dictionary that contains all the info that should be printed on the receipt
+tcost = bill#defines the total cost, which currently, only has the value of the bill
 
 def tax(st,b):
     handler = open("tax3.txt",'r')
@@ -88,9 +84,6 @@ finaltax = "$%.2f" %(finaltax)
 tip = "$%.2f" %(tip)
 bill = "$%.2f" %(bill)
 tcost = "$%.2f" %(tcost)
-
-
-    
 
 
 receipt = {"RESTAURANT": restaurant, "STATE": state, "DATE": now,"TIME": t, "SUB-TOTAL": bill,"SALES TAX": finaltax, "TIP": tip, "TOTAL": tcost, "SIGNATURE LINE":sigline}
