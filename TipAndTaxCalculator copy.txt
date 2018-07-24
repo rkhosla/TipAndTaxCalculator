@@ -72,10 +72,10 @@ def tip(s, b):
 #  else:
 #      s = input("Invalid level of service: Please re-enter service level.")
 #      tip(s,b)
-  return float(tip)
+  return tip
 
 
-tip = tip(service, bill)
+tip = tip(service, tcost)
 tcost += tip
 print (tip)
 print(tcost)
